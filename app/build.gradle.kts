@@ -84,6 +84,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
     implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
     implementation("com.squareup.retrofit2:adapter-rxjava3:3.0.0")
+    implementation("com.squareup.retrofit2:converter-jackson:3.0.0")
 
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:5.3.2")
@@ -115,5 +116,10 @@ dependencies {
 
     // circle image view
     implementation("com.mikhaellopez:circularimageview:4.3.1")
+
+    // jackson json converter
+    implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
+    implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
 
 }

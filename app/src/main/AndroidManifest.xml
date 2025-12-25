@@ -15,7 +15,7 @@
         android:theme="@style/Theme.AndroidLearning">
 
         <activity
-            android:name=".views.activities.retrofit.moshi.RetrofitMoshiActivity"
+            android:name=".views.activities.retrofit.jackson.RetrofitJacksonActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
