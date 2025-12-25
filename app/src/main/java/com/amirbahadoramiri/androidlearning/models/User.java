@@ -1,11 +1,11 @@
-package com.amirbahadoramiri.androidlearning.views.activities.mvvm;
+package com.amirbahadoramiri.androidlearning.models;
 
-public class MvvmUserTestClass {
+public class User {
     String name,email;
 
-    public MvvmUserTestClass() {}
+    public User() {}
 
-    public MvvmUserTestClass(String name, String email) {
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
     }

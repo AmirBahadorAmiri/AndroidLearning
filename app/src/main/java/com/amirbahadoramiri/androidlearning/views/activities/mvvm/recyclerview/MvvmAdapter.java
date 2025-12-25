@@ -9,16 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amirbahadoramiri.androidlearning.R;
 import com.amirbahadoramiri.androidlearning.databinding.ItemMvvmRecyclerviewBinding;
-import com.amirbahadoramiri.androidlearning.views.activities.mvvm.MvvmUserTestClass;
+import com.amirbahadoramiri.androidlearning.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MvvmAdapter extends RecyclerView.Adapter<MvvmAdapter.MvvmViewHolder> {
 
-    List<MvvmUserTestClass> userTestClassList;
+    List<User> userTestClassList;
 
-    public void addData(List<MvvmUserTestClass> newList) {
+    public void addData(List<User> newList) {
         if (userTestClassList == null) userTestClassList = new ArrayList<>();
         userTestClassList.addAll(newList);
     }

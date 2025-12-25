@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import com.amirbahadoramiri.androidlearning.R;
 import com.amirbahadoramiri.androidlearning.bases.BaseActivity;
 import com.amirbahadoramiri.androidlearning.databinding.ActivityMvvmSimpleBinding;
-import com.amirbahadoramiri.androidlearning.views.activities.mvvm.MvvmUserTestClass;
+import com.amirbahadoramiri.androidlearning.models.User;
 
 public class MvvmSimpleActivity extends BaseActivity {
 
@@ -21,7 +21,7 @@ public class MvvmSimpleActivity extends BaseActivity {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_mvvm_simple);
         setViewCompat();
 
-        binding.setUser(new MvvmUserTestClass("HassanKachal","HassanKachal@gmail.com"));
+        binding.setUser(new User("HassanKachal","HassanKachal@gmail.com"));
 
     }
 }

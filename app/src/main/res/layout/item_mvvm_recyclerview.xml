@@ -5,7 +5,7 @@
     <data>
         <variable
             name="User"
-            type="com.amirbahadoramiri.androidlearning.views.activities.mvvm.MvvmUserTestClass" />
+            type="com.amirbahadoramiri.androidlearning.models.User" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

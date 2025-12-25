@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.amirbahadoramiri.androidlearning.R;
 import com.amirbahadoramiri.androidlearning.bases.BaseActivity;
-import com.amirbahadoramiri.androidlearning.views.activities.mvvm.MvvmUserTestClass;
+import com.amirbahadoramiri.androidlearning.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 public class MvvmRecyclerViewActivity extends BaseActivity {
 
     RecyclerView activity_mvvm_recyclerview_recyclerview;
-    List<MvvmUserTestClass> userTestClassList = new ArrayList<>();
+    List<User> userTestClassList = new ArrayList<>();
     MvvmAdapter mvvmAdapter = new MvvmAdapter();
 
     @Override
@@ -27,11 +27,11 @@ public class MvvmRecyclerViewActivity extends BaseActivity {
         setViewCompat();
 
         activity_mvvm_recyclerview_recyclerview = findViewById(R.id.activity_mvvm_recyclerview_recyclerview);
-        userTestClassList.add(new MvvmUserTestClass("Amir","Amir@gmail.com"));
-        userTestClassList.add(new MvvmUserTestClass("Ali","Ali@gmail.com"));
-        userTestClassList.add(new MvvmUserTestClass("Reza","Reza@gmail.com"));
-        userTestClassList.add(new MvvmUserTestClass("Mamad","Mamad@gmail.com"));
-        userTestClassList.add(new MvvmUserTestClass("Hassan","Hassan@gmail.com"));
+        userTestClassList.add(new User("Amir","Amir@gmail.com"));
+        userTestClassList.add(new User("Ali","Ali@gmail.com"));
+        userTestClassList.add(new User("Reza","Reza@gmail.com"));
+        userTestClassList.add(new User("Mamad","Mamad@gmail.com"));
+        userTestClassList.add(new User("Hassan","Hassan@gmail.com"));
         mvvmAdapter.addData(userTestClassList);
         activity_mvvm_recyclerview_recyclerview.setAdapter(mvvmAdapter);
         activity_mvvm_recyclerview_recyclerview.setLayoutManager(new LinearLayoutManager(this));

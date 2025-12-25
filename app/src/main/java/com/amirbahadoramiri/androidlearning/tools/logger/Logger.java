@@ -3,12 +3,12 @@ package com.amirbahadoramiri.androidlearning.tools.logger;
 import android.util.Log;
 
 public class Logger {
-    public static String DEBUG = "DEBUG";
-    public static String INFO = "INFO";
-    public static String WARNING = "WARNING";
-    public static String ERROR = "ERROR";
-    public static String VERBOSE = "VERBOSE";
-    public static String WTF = "WTF";
+    private static final String DEBUG = "DEBUG";
+    private static final String INFO = "INFO";
+    private static final String WARNING = "WARNING";
+    private static final String ERROR = "ERROR";
+    private static final String VERBOSE = "VERBOSE";
+    private static final String WTF = "WTF";
 
     public static void loge(String msg) {
         Log.e(ERROR, msg);
