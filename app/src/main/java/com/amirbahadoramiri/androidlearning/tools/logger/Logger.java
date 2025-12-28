@@ -13,6 +13,7 @@ public class Logger {
     public static void loge(String msg) {
         Log.e(ERROR, msg);
     }
+
     public static void loge(String tag, String msg) {
         Log.e(tag, msg);
     }
@@ -20,6 +21,7 @@ public class Logger {
     public static void logd(String msg) {
         Log.d(DEBUG, msg);
     }
+
     public static void logd(String tag, String msg) {
         Log.d(tag, msg);
     }
@@ -27,6 +29,7 @@ public class Logger {
     public static void logi(String msg) {
         Log.i(INFO, msg);
     }
+
     public static void logi(String tag, String msg) {
         Log.i(tag, msg);
     }
@@ -34,6 +37,7 @@ public class Logger {
     public static void logw(String msg) {
         Log.w(WARNING, msg);
     }
+
     public static void logw(String tag, String msg) {
         Log.w(tag, msg);
     }
@@ -41,6 +45,7 @@ public class Logger {
     public static void logv(String msg) {
         Log.v(VERBOSE, msg);
     }
+
     public static void logv(String tag, String msg) {
         Log.v(tag, msg);
     }
@@ -48,6 +53,7 @@ public class Logger {
     public static void logwtf(String msg) {
         Log.wtf(WTF, msg);
     }
+
     public static void logwtf(String tag, String msg) {
         Log.wtf(tag, msg);
     }
@@ -55,6 +61,7 @@ public class Logger {
     public static void log_print(int priority, String msg) {
         Log.println(priority, DEBUG, msg);
     }
+
     public static void log_print(String tag, int priority, String msg) {
         Log.println(priority, tag, msg);
     }
