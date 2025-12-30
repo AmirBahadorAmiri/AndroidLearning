@@ -27,6 +27,10 @@ public class MvvmLiveDataAdapter extends RecyclerView.Adapter<MvvmLiveDataAdapte
         characterList.addAll(characters);
     }
 
+    public List<Character> getData() {
+        return characterList;
+    }
+
     @NonNull
     @Override
     public MainHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
