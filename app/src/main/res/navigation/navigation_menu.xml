@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_menu"
+    app:startDestination="@id/home">
+
+    <fragment
+        tools:layout="@layout/fragment_home"
+        android:id="@+id/home"
+        android:name="com.amirbahadoramiri.androidlearning.views.mvvm.fragment.FragmentHome"
+        android:label="FragmentHome" >
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/profile"
+            app:enterAnim="@anim/in"
+            app:exitAnim="@anim/out" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_profile"
+        android:id="@+id/profile"
+        android:name="com.amirbahadoramiri.androidlearning.views.mvvm.fragment.FragmentProfile"
+        android:label="FragmentProfile" />
+
+    <fragment
+        tools:layout="@layout/fragment_search"
+        android:id="@+id/search"
+        android:name="com.amirbahadoramiri.androidlearning.views.mvvm.fragment.FragmentSearch"
+        android:label="FragmentSearch" />
+
+    <fragment
+        tools:layout="@layout/fragment_notification"
+        android:id="@+id/notification"
+        android:name="com.amirbahadoramiri.androidlearning.views.mvvm.fragment.FragmentNotification"
+        android:label="FragmentNotification" />
+
+</navigation>
