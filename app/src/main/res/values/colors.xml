@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="background_color">#F5F5F5</color>
+    <color name="texthintColor">#B8B8B8</color>
+    <color name="item_background">#E5E5E5</color>
+
+    <color name="main_color_1">#0077FF</color>
+    <color name="main_color_1_tint">#AFEEEE</color>
+    <color name="main_color_2">#FF6347</color>
+    <color name="main_color_2_tint">#FFFACD</color>
+
+    <color name="green_color">#3EB489</color>
+    <color name="purple_color">#9966CC</color>
 </resources>

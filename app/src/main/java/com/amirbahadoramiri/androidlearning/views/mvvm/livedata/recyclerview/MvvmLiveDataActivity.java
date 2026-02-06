@@ -3,30 +3,23 @@ package com.amirbahadoramiri.androidlearning.views.mvvm.livedata.recyclerview;
 import android.os.Bundle;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.amirbahadoramiri.androidlearning.R;
 import com.amirbahadoramiri.androidlearning.bases.BaseActivity;
 import com.amirbahadoramiri.androidlearning.databinding.ActivityMvvmLivedataBinding;
-import com.amirbahadoramiri.androidlearning.models.CharacterJacksonWrapper;
 import com.amirbahadoramiri.androidlearning.tools.logger.Logger;
-import com.amirbahadoramiri.androidlearning.views.retrofit.RetrofitClient;
 
 import java.util.ArrayList;
-
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.core.SingleObserver;
-import io.reactivex.rxjava3.disposables.Disposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MvvmLiveDataActivity extends BaseActivity {
 
     ActivityMvvmLivedataBinding binding;
     MvvmLiveDataAdapter adapter;
-//    CharacterViewModel characterViewModel;
+    CharacterViewModel characterViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,46 +33,46 @@ public class MvvmLiveDataActivity extends BaseActivity {
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerview.setAdapter(adapter);
 
-//        characterViewModel = new ViewModelProvider(this).get(CharacterViewModel.class);
-//        characterViewModel.getCharacterList()
-//                .observe(this, characterList -> {
-//                    adapter.setData(characterList);
-//                    adapter.notifyDataSetChanged();
-//                });
-//        characterViewModel.getError()
-//                .observe(this, s -> {
-//                    Logger.logd("data failed to load");
-//                    Logger.logd(s);
-//                });
+        characterViewModel = new ViewModelProvider(this).get(CharacterViewModel.class);
+        characterViewModel.getCharacterList()
+                .observe(this, characterList -> {
+                    adapter.setData(characterList);
+                    adapter.notifyDataSetChanged();
+                });
+        characterViewModel.getError()
+                .observe(this, s -> {
+                    Logger.logd("data failed to load");
+                    Logger.logd(s);
+                });
 
 
-        if (savedInstanceState != null) {
-            adapter.setData(savedInstanceState.getParcelableArrayList("characters"));
-            adapter.notifyDataSetChanged();
-        } else {
-            RetrofitClient.getRetrofitInterfaces()
-                    .listCharactersJackson("https://rickandmortyapi.com/api/character/")
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe(new SingleObserver<>() {
-                        @Override
-                        public void onSubscribe(@NonNull Disposable d) {
-                        }
-
-                        @Override
-                        public void onSuccess(@NonNull CharacterJacksonWrapper characterJacksonWrapper) {
-                            Logger.logd("data loaded successfully");
-                            adapter.setData(characterJacksonWrapper.getResults());
-                            adapter.notifyDataSetChanged();
-                        }
-
-                        @Override
-                        public void onError(@NonNull Throwable e) {
-                            Logger.logd("data failed to load");
-                            Logger.logd(e.getMessage());
-                        }
-                    });
-        }
+//        if (savedInstanceState != null) {
+//            adapter.setData(savedInstanceState.getParcelableArrayList("characters"));
+//            adapter.notifyDataSetChanged();
+//        } else {
+//            RetrofitClient.getRetrofitInterfaces()
+//                    .listCharactersJackson("https://rickandmortyapi.com/api/character/")
+//                    .subscribeOn(Schedulers.io())
+//                    .observeOn(AndroidSchedulers.mainThread())
+//                    .subscribe(new SingleObserver<>() {
+//                        @Override
+//                        public void onSubscribe(@NonNull Disposable d) {
+//                        }
+//
+//                        @Override
+//                        public void onSuccess(@NonNull CharacterJacksonWrapper characterJacksonWrapper) {
+//                            Logger.logd("data loaded successfully");
+//                            adapter.setData(characterJacksonWrapper.getResults());
+//                            adapter.notifyDataSetChanged();
+//                        }
+//
+//                        @Override
+//                        public void onError(@NonNull Throwable e) {
+//                            Logger.logd("data failed to load");
+//                            Logger.logd(e.getMessage());
+//                        }
+//                    });
+//        }
 
     }
 
@@ -92,7 +85,7 @@ public class MvvmLiveDataActivity extends BaseActivity {
     @Override
     protected void onSaveInstanceState(@androidx.annotation.NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelableArrayList("characters", (ArrayList<? extends Parcelable>) adapter.getData());
+//        outState.putParcelableArrayList("characters", (ArrayList<? extends Parcelable>) adapter.getData());
     }
 
     @Override

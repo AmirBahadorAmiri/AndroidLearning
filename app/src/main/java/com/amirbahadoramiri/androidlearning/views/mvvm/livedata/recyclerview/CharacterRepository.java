@@ -18,7 +18,7 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class CharacterRepository extends ViewModel {
     private static CharacterRepository instance;
-    private MutableLiveData<List<Character>> mutableLiveData;
+    private MutableLiveData<List<Character>> characterLiveData;
     private MutableLiveData<String> errorLiveData;
 
     public static CharacterRepository getInstance() {
@@ -29,13 +29,25 @@ public class CharacterRepository extends ViewModel {
     }
 
     public MutableLiveData<List<Character>> getCharacterList() {
-        if (mutableLiveData == null)
-            mutableLiveData = new MutableLiveData<>();
+        if (characterLiveData == null)
+            characterLiveData = new MutableLiveData<>();
 
-        if (mutableLiveData.getValue() != null) {
-            return mutableLiveData;
+        if (characterLiveData.getValue() != null) {
+            return characterLiveData;
         }
 
+        loadCharacterList();
+
+        return characterLiveData;
+    }
+
+    public void refreshCharacter() {
+        if (characterLiveData == null)
+            characterLiveData = new MutableLiveData<>();
+        loadCharacterList();
+    }
+
+    private void loadCharacterList() {
         RetrofitClient.getRetrofitInterfaces()
                 .listCharactersJackson("https://rickandmortyapi.com/api/character/")
                 .subscribeOn(Schedulers.io())
@@ -47,7 +59,7 @@ public class CharacterRepository extends ViewModel {
 
                     @Override
                     public void onSuccess(@NonNull CharacterJacksonWrapper characterJacksonWrapper) {
-                        mutableLiveData.setValue(characterJacksonWrapper.getResults());
+                        characterLiveData.setValue(characterJacksonWrapper.getResults());
                         Logger.logd("data loaded successfully");
                     }
 
@@ -56,12 +68,6 @@ public class CharacterRepository extends ViewModel {
                         errorLiveData.setValue(e.getMessage());
                     }
                 });
-
-        return mutableLiveData;
-    }
-
-    public void refreshProducts() {
-        getCharacterList(); // دوباره درخواست می‌فرسته و کش رو آپدیت می‌کنه
     }
 
     public MutableLiveData<String> getError() {

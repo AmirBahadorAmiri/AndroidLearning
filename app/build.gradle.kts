@@ -11,6 +11,13 @@ android {
         version = release(36)
     }
 
+    packaging {
+        resources {
+            excludes += "META-INF/INDEX.LIST"
+            excludes += "META-INF/io.netty.versions.properties"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.amirbahadoramiri.androidlearning"
         minSdk = 26
@@ -88,6 +95,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
     implementation("com.squareup.retrofit2:adapter-rxjava3:3.0.0")
     implementation("com.squareup.retrofit2:converter-jackson:3.0.0")
+    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
 
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:5.3.2")
@@ -124,5 +132,13 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
     implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
+
+    implementation("org.maplibre.gl:android-sdk:10.2.0")
+
+//    implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
+//    implementation("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
+//    implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
+
+    implementation("com.hivemq:hivemq-mqtt-client:1.3.3")
 
 }

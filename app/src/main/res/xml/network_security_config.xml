@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.218.213.169</domain>     <!-- IP محلی -->
+        <domain includeSubdomains="true">api.oldcompany.com</domain> <!-- دامنه قدیمی -->
+    </domain-config>
+
+    <base-config cleartextTrafficPermitted="false" /> <!-- بقیه همه HTTPS -->
+</network-security-config>

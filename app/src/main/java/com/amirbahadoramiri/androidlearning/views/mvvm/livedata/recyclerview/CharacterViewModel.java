@@ -25,7 +25,7 @@ public class CharacterViewModel extends AndroidViewModel {
     }
 
     public void refresh() {
-        repository.refreshProducts();
+        repository.refreshCharacter();
     }
 
     public MutableLiveData<String> getError() {
