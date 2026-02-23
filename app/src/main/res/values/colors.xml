@@ -14,4 +14,9 @@
 
     <color name="green_color">#3EB489</color>
     <color name="purple_color">#9966CC</color>
+
+    <color name="ios_light">#e3e3e3</color>
+    <color name="ios_disable">#cbcecf</color>
+    <color name="ios_green">#4cd964</color>
+
 </resources>

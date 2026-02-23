@@ -21,7 +21,7 @@
         android:theme="@style/Theme.AndroidLearning">
 
         <activity
-            android:name=".views.eventbus.PublisherActivity"
+            android:name=".views.flashlight.FlashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.eventbus.SubscriberActivity" />
+<!--        <activity android:name=".views.eventbus.SubscriberActivity" />-->
 
 <!--        <service-->
 <!--            android:name=".views.readtextfromdisplay.MyAccessibilityService"-->
