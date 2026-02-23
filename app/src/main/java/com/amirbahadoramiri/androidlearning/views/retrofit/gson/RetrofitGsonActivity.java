@@ -16,17 +16,24 @@ import com.amirbahadoramiri.androidlearning.views.retrofit.RetrofitClient;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dagger.hilt.android.AndroidEntryPoint;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.SingleObserver;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
+@AndroidEntryPoint
 public class RetrofitGsonActivity extends BaseActivity {
 
     RecyclerView recyclerview;
     RetrofitGsonMvvmAdapter retrofitGsonMvvmAdapter;
     List<Character> characterList = new ArrayList<>();
+
+    @Inject
+    RetrofitClient.RetrofitInterfaces getRetrofitInterfaces;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,7 +47,7 @@ public class RetrofitGsonActivity extends BaseActivity {
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
         recyclerview.setAdapter(retrofitGsonMvvmAdapter);
 
-        RetrofitClient.getRetrofitInterfaces()
+        getRetrofitInterfaces
                 .listCharacters("https://rickandmortyapi.com/api/character/")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -1,23 +1,19 @@
 package com.amirbahadoramiri.androidlearning.views.readtextfromdisplay;
 
 import android.accessibilityservice.AccessibilityService;
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.Gravity;
-import android.view.WindowManager;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.TextView;
 
 import com.amirbahadoramiri.androidlearning.tools.logger.Logger;
 
+@SuppressLint("AccessibilityPolicy")
 public class MyAccessibilityService extends AccessibilityService {
 
     private static final String TARGET_PACKAGE = "com.amirbahadoramiri.androidlearning";
-    TextView floatingText;
+    FloatingTextManager floating;
     boolean isAddedText = false;
 
     @Override
@@ -51,7 +47,7 @@ public class MyAccessibilityService extends AccessibilityService {
         CharSequence text = node.getText();
         if (text != null && !text.toString().isEmpty()) {
             Logger.logd(text.toString());
-            new Handler(Looper.getMainLooper()).post(() -> floatingText.setText(text.toString()));
+            new Handler(Looper.getMainLooper()).post(() -> floating.updateText(text.toString()));
         }
 
         for (int i = 0; i < node.getChildCount(); i++) {
@@ -65,31 +61,8 @@ public class MyAccessibilityService extends AccessibilityService {
     }
 
     public void addText() {
-        floatingText = new TextView(this);
-        floatingText.setText("متن شناور");
-        floatingText.setTextColor(Color.WHITE);
-        floatingText.setBackgroundColor(0xAA000000);
-        floatingText.setPadding(24, 12, 24, 12);
-        floatingText.setTextSize(14);
-
-        WindowManager windowManager =
-                (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-
-        WindowManager.LayoutParams params =
-                new WindowManager.LayoutParams(
-                        WindowManager.LayoutParams.WRAP_CONTENT,
-                        WindowManager.LayoutParams.WRAP_CONTENT,
-                        WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                        WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                                | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
-                        PixelFormat.TRANSLUCENT
-                );
-
-        params.gravity = Gravity.TOP | Gravity.END;
-        params.x = 24;
-        params.y = 200;
-
-        windowManager.addView(floatingText, params);
+        floating = new FloatingTextManager(this);
+        floating.show("سلام! 👋");
     }
 
     @Override

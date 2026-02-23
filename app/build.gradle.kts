@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     id("androidx.room")
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -46,10 +47,10 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
     buildFeatures {
-        dataBinding=true
+        dataBinding = true
     }
     dataBinding {
-        enable=true
+        enable = true
     }
 
     kotlin {
@@ -71,74 +72,85 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // Persian Calender
-    implementation("com.aminography:primecalendar:1.7.0")
+    implementation(libs.primecalendar)
 
     // RxJava RxAndroid
-    implementation("io.reactivex.rxjava3:rxandroid:3.0.2")
-    implementation("io.reactivex.rxjava3:rxjava:3.1.12")
+    implementation(libs.rxandroid)
+    implementation(libs.rxjava)
 
     // Room Database
-    val room_version = "2.8.4"
-    implementation("androidx.room:room-runtime:${room_version}")
-    ksp("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-rxjava3:${room_version}")
+    implementation(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.rxjava3)
 
     // Gson
-    implementation("com.google.code.gson:gson:2.13.2")
+    implementation(libs.gson)
 
     // Volley
-    implementation("com.android.volley:volley:1.2.1")
+    implementation(libs.volley)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("com.squareup.retrofit2:converter-moshi:3.0.0")
-    implementation("com.squareup.retrofit2:adapter-rxjava3:3.0.0")
-    implementation("com.squareup.retrofit2:converter-jackson:3.0.0")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.converter.moshi)
+    implementation(libs.adapter.rxjava3)
+    implementation(libs.converter.jackson)
+    implementation(libs.converter.scalars)
 
     // OkHttp
-    implementation("com.squareup.okhttp3:okhttp:5.3.2")
+    implementation(libs.okhttp)
 
     // Moshi
-    implementation("com.squareup.moshi:moshi:1.15.2")
+    implementation(libs.moshi)
 
     // Okio
-    implementation("com.squareup.okio:okio:3.16.4")
+    implementation(libs.okio)
 
     // Picasso
-    implementation("com.squareup.picasso:picasso:2.71828")
+    implementation(libs.picasso)
 
     // Glide
-    implementation("com.github.bumptech.glide:glide:5.0.5")
+    implementation(libs.glide)
 
     // Fresco
-    implementation("com.facebook.fresco:fresco:3.6.0")
+    implementation(libs.fresco)
+    implementation(libs.infer.annotation)
 
-    // dagger 2
-    implementation("com.google.dagger:dagger-android:2.57.2")
-    annotationProcessor("com.google.dagger:dagger-android-processor:2.57.2")
+
+//    // dagger 2
+//    implementation("com.google.dagger:dagger-android:2.59.1")
+//    annotationProcessor("com.google.dagger:dagger-android-processor:2.59.1")
+
+//    hilt android
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
 
     // ion networking and load images and downloading files
-    implementation("com.koushikdutta.ion:ion:3.1.0")
+    implementation(libs.ion)
 
     // circle image view
-    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation(libs.circleimageview)
 
     // circle image view
-    implementation("com.mikhaellopez:circularimageview:4.3.1")
+    implementation(libs.circularimageview)
 
     // jackson json converter
-    implementation("com.fasterxml.jackson.core:jackson-core:2.20.1")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.20.1")
-    implementation("com.fasterxml.jackson.core:jackson-annotations:2.20")
+    implementation(libs.jackson.core)
+    implementation(libs.jackson.databind)
+    implementation(libs.jackson.annotations)
 
-    implementation("org.maplibre.gl:android-sdk:10.2.0")
+    // mapir
+    implementation(libs.android.sdk)
 
 //    implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
 //    implementation("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
 //    implementation("androidx.localbroadcastmanager:localbroadcastmanager:1.1.0")
 
-    implementation("com.hivemq:hivemq-mqtt-client:1.3.3")
+//    mqtt server
+    implementation(libs.hivemq.mqtt.client)
+
+//    eventbus
+    implementation(libs.eventbus)
 
 }
