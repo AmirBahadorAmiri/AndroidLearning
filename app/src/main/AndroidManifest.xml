@@ -27,7 +27,7 @@
         android:theme="@style/Theme.AndroidLearning">
 
         <activity
-            android:name=".clean.presentation.activities.CleanMainActivity"
+            android:name=".views.retrofit.websource.WebSourceActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
