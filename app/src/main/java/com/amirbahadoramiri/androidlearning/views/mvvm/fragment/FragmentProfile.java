@@ -37,7 +37,7 @@ public class FragmentProfile extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.txt.setText(requireArguments().getString("key"));
+        binding.txt.setText(requireArguments().getString("name"));
 
     }
 }

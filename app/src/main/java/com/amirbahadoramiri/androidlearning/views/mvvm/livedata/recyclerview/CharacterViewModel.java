@@ -21,6 +21,7 @@ public class CharacterViewModel extends AndroidViewModel {
     }
 
     public MutableLiveData<List<Character>> getCharacterList() {
+//        return repository.getCharacterList();
         return characterLiveData;
     }
 

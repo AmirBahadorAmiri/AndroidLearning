@@ -9,7 +9,9 @@ import io.reactivex.rxjava3.core.Single;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
 import retrofit2.converter.jackson.JacksonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Url;
 
 public class RetrofitClient {
@@ -25,10 +27,10 @@ public class RetrofitClient {
 
             retrofit = new Retrofit.Builder()
                     .baseUrl("https://google.com")
-//                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(ScalarsConverterFactory.create())
 //                    .addConverterFactory(GsonConverterFactory.create())
 //                    .addConverterFactory(MoshiConverterFactory.create())
-                    .addConverterFactory(JacksonConverterFactory.create(objectMapper))
+//                    .addConverterFactory(JacksonConverterFactory.create(objectMapper))
                     .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                     .build();
         }
@@ -47,6 +49,12 @@ public class RetrofitClient {
 
         @GET
         Single<CharacterJacksonWrapper> listCharactersJackson(@Url String url);
+
+        @GET
+        Single<String> get(@Url String url);
+
+        @POST
+        Single<String> post(@Url String url);
 
     }
 

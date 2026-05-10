@@ -3,11 +3,18 @@ package com.amirbahadoramiri.androidlearning.views.kcoroutine
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import com.amirbahadoramiri.androidlearning.R
 import com.amirbahadoramiri.androidlearning.bases.BaseActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CoroutineActivity : BaseActivity() {
 
@@ -18,16 +25,36 @@ class CoroutineActivity : BaseActivity() {
         setViewCompat()
 
         findViewById<Button>(R.id.button).setOnClickListener {
-            lifecycleScope.launch {
+//            CoroutineScope(Dispatchers.Default).launch {
+//                setText("Hello World")
+//            }
+
+//            GlobalScope.launch {
+//                setText("Hello World")
+//            }
+
+            CoroutineScope(Dispatchers.IO).launch {
                 setText("Hello World")
             }
+
         }
 
     }
 
     suspend fun setText(str: String) {
         delay(3000)
-        findViewById<TextView>(R.id.textView3).text = str
+//        withContext(Dispatchers.Main){
+//            findViewById<TextView>(R.id.textView3).text = str
+//        }
+
+//        MainScope().launch {
+//            findViewById<TextView>(R.id.textView3).text = str
+//        }
+
+        lifecycleScope.launch {
+            findViewById<TextView>(R.id.textView3).text = str
+        }
+
     }
 
 }

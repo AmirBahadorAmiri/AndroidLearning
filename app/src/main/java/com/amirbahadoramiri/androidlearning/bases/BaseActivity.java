@@ -1,7 +1,9 @@
 package com.amirbahadoramiri.androidlearning.bases;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.SystemBarStyle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -12,6 +14,11 @@ public class BaseActivity extends AppCompatActivity {
 
     public void edgeEnabled() {
         EdgeToEdge.enable(this);
+    }
+
+    public void edgeColor() {
+        EdgeToEdge.enable(this,SystemBarStyle.dark(
+                ContextCompat.getColor(this, R.color.main_color_1)));
     }
 
     public void setViewCompat() {

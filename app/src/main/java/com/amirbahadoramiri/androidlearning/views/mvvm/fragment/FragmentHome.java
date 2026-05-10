@@ -47,8 +47,13 @@ public class FragmentHome extends Fragment {
 
 
             Bundle bundle = new Bundle();
-            bundle.putString("key", "value");
+            bundle.putString("name", "Behzad");
             Navigation.findNavController(binding.btnLogin).navigate(R.id.action_home_to_profile, bundle);
+
+//            NavDirections directions = new ActionOnlyNavDirections(R.id.action_home_to_profile);
+//            directions.getArguments().putString("name","Kambiz");
+//            Navigation.findNavController(binding.getRoot()).navigate(directions);
+
         });
 
     }

@@ -6,10 +6,10 @@
     app:startDestination="@id/home">
 
     <fragment
-        tools:layout="@layout/fragment_home"
         android:id="@+id/home"
         android:name="com.amirbahadoramiri.androidlearning.views.mvvm.fragment.FragmentHome"
-        android:label="FragmentHome" >
+        android:label="FragmentHome"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_home_to_profile"
             app:destination="@id/profile"
@@ -21,7 +21,12 @@
         tools:layout="@layout/fragment_profile"
         android:id="@+id/profile"
         android:name="com.amirbahadoramiri.androidlearning.views.mvvm.fragment.FragmentProfile"
-        android:label="FragmentProfile" />
+        android:label="FragmentProfile" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="salam" />
+    </fragment>
 
     <fragment
         tools:layout="@layout/fragment_search"

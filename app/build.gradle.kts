@@ -1,3 +1,27 @@
+val fileName = "app-name"
+val packageName = "com.amirbahadoramiri.androidlearning"
+
+val MSV = 26 // Minimum SDK Version
+val TSV = 36 // Target SDK Version
+val CSV = 36 // Compile SDK Version
+val versionMajor = 1
+val versionMinor = 2
+val versionPatch = 3
+
+val debugMinify = false
+val releaseMinify = true
+
+private fun generateVersionCode() : Int {
+    return (versionMajor+versionMinor+versionPatch);
+}
+
+private fun generateVersionName() : String {
+    return "${versionMajor}.${versionMinor}.${versionPatch}"
+}
+private fun generateFileName() : String {
+    return "${fileName}-${generateVersionName()}-(${generateVersionCode()}).apk"
+}
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -7,9 +31,15 @@ plugins {
 }
 
 android {
-    namespace = "com.amirbahadoramiri.androidlearning"
-    compileSdk {
-        version = release(36)
+    namespace = packageName
+    compileSdk(CSV)
+
+    applicationVariants.all {
+        val variant = this
+        variant.outputs.all {
+            val outputFileName = generateFileName()
+            (this as? com.android.build.gradle.internal.api.BaseVariantOutputImpl)?.outputFileName = outputFileName
+        }
     }
 
     packaging {
@@ -18,13 +48,12 @@ android {
             excludes += "META-INF/io.netty.versions.properties"
         }
     }
-
     defaultConfig {
-        applicationId = "com.amirbahadoramiri.androidlearning"
-        minSdk = 26
-        targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = packageName
+        minSdk = MSV
+        targetSdk = TSV
+        versionCode = generateVersionCode()
+        versionName = generateVersionName()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,11 +64,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = releaseMinify
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            isMinifyEnabled = debugMinify
         }
     }
     compileOptions {

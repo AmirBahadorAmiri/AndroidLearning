@@ -9,6 +9,15 @@ public class Logger {
     private static final String ERROR = "ERROR";
     private static final String VERBOSE = "VERBOSE";
     private static final String WTF = "WTF";
+    private static final String ANY = "ANY";
+
+    public static <T> void any(T str) {
+        Log.d(ANY, str.toString());
+    }
+
+    public static <T> void any(String tag, T str) {
+        Log.d(tag, str.toString());
+    }
 
     public static void loge(String msg) {
         Log.e(ERROR, msg);
@@ -65,4 +74,5 @@ public class Logger {
     public static void log_print(String tag, int priority, String msg) {
         Log.println(priority, tag, msg);
     }
+
 }

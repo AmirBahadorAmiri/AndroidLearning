@@ -39,11 +39,10 @@ class EndOfRecyclerViewAdapter : RecyclerView.Adapter<EndOfRecyclerViewAdapter.H
         return users.size
     }
 
-    inner class Holder(val itemView: ItemMvvmRecyclerviewBinding) :
-        RecyclerView.ViewHolder(itemView.root) {
+    inner class Holder(val binding: ItemMvvmRecyclerviewBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun setData(position: Int) {
-            itemView.user = users.get(position)
+            binding.user = users.get(position)
 
             if (position == (users.size-1)) Logger.logd("END OF LIST $position")
 
