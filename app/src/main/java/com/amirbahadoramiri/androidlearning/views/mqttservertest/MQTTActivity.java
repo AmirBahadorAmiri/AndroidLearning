@@ -41,7 +41,7 @@ public class MQTTActivity extends BaseActivity {
 
         client.connect();
 
-        Logger.logd("publishWith");
+        Logger.debug("publishWith");
         client.publishWith()
                 .topic("amir/test/android")
                 .payload("سلام از HiveMQ 🚀".getBytes())
@@ -52,8 +52,8 @@ public class MQTTActivity extends BaseActivity {
                 .qos(MqttQos.EXACTLY_ONCE)
                 .callback(publish -> {
                     String msg = new String(publish.getPayloadAsBytes());
-                    Logger.logd("subscribeWith");
-                    Logger.logd(msg);
+                    Logger.debug("subscribeWith");
+                    Logger.debug(msg);
                 })
                 .send();
 

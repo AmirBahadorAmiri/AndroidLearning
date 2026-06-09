@@ -18,7 +18,7 @@ public class DateActivity extends BaseActivity {
 
         PrimeCalendar calendar = new PersianCalendar();
         String str = calendar.getYear()+"/"+calendar.getMonth()+"/"+calendar.getDayOfMonth();
-        Logger.logd(str);
+        Logger.debug(str);
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
 
     }

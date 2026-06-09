@@ -185,4 +185,9 @@ dependencies {
 //    eventbus
     implementation(libs.eventbus)
 
+//    socket.io
+    implementation("io.socket:socket.io-client:2.1.2") {
+        exclude(group = "org.json", module = "json")
+    }
+
 }

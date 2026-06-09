@@ -60,7 +60,7 @@ public class CharacterRepository extends ViewModel {
                     @Override
                     public void onSuccess(@NonNull CharacterJacksonWrapper characterJacksonWrapper) {
                         characterLiveData.setValue(characterJacksonWrapper.getResults());
-                        Logger.logd("data loaded successfully");
+                        Logger.debug("data loaded successfully");
                     }
 
                     @Override

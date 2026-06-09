@@ -58,16 +58,16 @@ public class RetrofitGsonActivity extends BaseActivity {
 
                     @Override
                     public void onSuccess(@NonNull CharacterGsonWrapper characterGsonWrapper) {
-                        Logger.logd("is successfull");
-                        Logger.logd("count: " + characterGsonWrapper.getResults().size());
+                        Logger.debug("is successfull");
+                        Logger.debug("count: " + characterGsonWrapper.getResults().size());
                         characterList.addAll(characterGsonWrapper.getResults());
                         retrofitGsonMvvmAdapter.notifyDataSetChanged();
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Logger.logd("is not successfull");
-                        Logger.logd(e.getMessage());
+                        Logger.debug("is not successfull");
+                        Logger.debug(e.getMessage());
                     }
                 });
 

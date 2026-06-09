@@ -1,50 +1,414 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:elevation="0.5dp"
-        android:background="@drawable/round_shape_8dp"
-        android:stretchColumns="0,1,2,3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+    <ScrollView
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="0.5dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/round_shape_8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp" >
 
-        <TableRow>
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="abcdefghij" android:layout_column="0" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="abcdefghij" android:layout_column="1" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="abcdefghij" android:layout_column="2" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="abcdefghij" android:layout_column="3" />
-        </TableRow>
-        <TableRow >
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 2" android:layout_column="2" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
-        </TableRow>
-        <TableRow >
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 2" android:layout_column="2" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
-        </TableRow>
-        <TableRow >
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 2" android:layout_column="2" />
-            <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
-        </TableRow>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    </TableLayout>
+            <TableLayout
+                android:stretchColumns="0,1,2,3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow >
+                    <TextView android:padding="8dp" android:maxLength="15" android:ellipsize="end" android:background="@drawable/round_shape_8dp" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:padding="8dp" android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:padding="8dp" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:padding="8dp" android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow><TableRow >
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+            </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 2" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView  android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2_Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 3" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+                <TableRow >
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#C1F0C8" android:gravity="center" android:text="Row 4" android:layout_column="0" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 1" android:layout_column="1" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#1AA1FF" android:textColor="@color/white" android:gravity="center" android:text="Col 2" android:layout_column="2" />
+                    <TextView android:maxLength="15" android:ellipsize="end" android:background="#FBE2D5" android:gravity="center" android:text="Col 3" android:layout_column="3" />
+                </TableRow>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </TableLayout>
+
+        </HorizontalScrollView>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

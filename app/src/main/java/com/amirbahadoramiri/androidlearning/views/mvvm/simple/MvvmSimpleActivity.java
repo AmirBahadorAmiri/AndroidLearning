@@ -30,7 +30,7 @@ public class MvvmSimpleActivity extends BaseActivity implements TextWatcher {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_mvvm_simple);
         setViewCompat();
 
-        Logger.logd(str);
+        Logger.debug(str);
 
 //        User user = new User("HassanKachal","HassanKachal@gmail.com");
 //        if ( savedInstanceState!= null ) {

@@ -24,7 +24,7 @@ public class MvvmLiveDataActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Logger.logd("onCreate");
+        Logger.debug("onCreate");
         edgeEnabled();
         binding = DataBindingUtil.setContentView(this, R.layout.activity_mvvm_livedata);
         setViewCompat();
@@ -41,8 +41,8 @@ public class MvvmLiveDataActivity extends BaseActivity {
                 });
         characterViewModel.getError()
                 .observe(this, s -> {
-                    Logger.logd("data failed to load");
-                    Logger.logd(s);
+                    Logger.debug("data failed to load");
+                    Logger.debug(s);
                 });
 
 
@@ -79,7 +79,7 @@ public class MvvmLiveDataActivity extends BaseActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Logger.logd("onStart");
+        Logger.debug("onStart");
     }
 
     @Override
@@ -91,30 +91,30 @@ public class MvvmLiveDataActivity extends BaseActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Logger.logd("onStop");
+        Logger.debug("onStop");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Logger.logd("onPause");
+        Logger.debug("onPause");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Logger.logd("onDestroy");
+        Logger.debug("onDestroy");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Logger.logd("onRestart");
+        Logger.debug("onRestart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Logger.logd("onResume");
+        Logger.debug("onResume");
     }
 }

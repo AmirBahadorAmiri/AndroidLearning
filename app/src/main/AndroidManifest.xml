@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-`
+
     <application
         android:name=".AppManager"
         android:allowBackup="true"
@@ -27,7 +27,8 @@
         android:theme="@style/Theme.AndroidLearning">
 
         <activity
-            android:name=".views.retrofit.websource.WebSourceActivity"
+            android:name=".views.volleygoogle.VolleyReqActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

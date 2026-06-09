@@ -20,7 +20,7 @@ public class CameraFlasher {
             onFlashLightListener.onSuccess(true);
         } catch (Exception e) {
             onFlashLightListener.onSuccess(false);
-            Logger.logd(e.getMessage());
+            Logger.debug(e.getMessage());
         }
     }
 
@@ -30,7 +30,7 @@ public class CameraFlasher {
             onFlashLightListener.onSuccess(true);
         } catch (Exception e) {
             onFlashLightListener.onSuccess(false);
-            Logger.logd(e.getMessage());
+            Logger.debug(e.getMessage());
         }
     }
 

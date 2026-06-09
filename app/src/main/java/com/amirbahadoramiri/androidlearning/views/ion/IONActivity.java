@@ -43,7 +43,7 @@ public class IONActivity extends BaseActivity {
                     @Override
                     public void onCompleted(Exception e, JsonObject object) {
                         if (e != null) {
-                            Logger.loge(e.getMessage());
+                            Logger.error(e.getMessage());
                         } else {
                             JsonArray results = object.get("results").getAsJsonArray();
                             for (int i = 0; i < results.size(); i++) {

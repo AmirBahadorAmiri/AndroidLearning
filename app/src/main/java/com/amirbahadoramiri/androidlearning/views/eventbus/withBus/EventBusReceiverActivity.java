@@ -34,7 +34,7 @@ public class EventBusReceiverActivity extends BaseActivity {
             @Override
             public void onNext(User user) {
                 binding.setData(user);
-                Logger.logd(user.toString());
+                Logger.debug(user.toString());
             }
             @Override public void onError(Throwable e) {}
             @Override public void onComplete() {}

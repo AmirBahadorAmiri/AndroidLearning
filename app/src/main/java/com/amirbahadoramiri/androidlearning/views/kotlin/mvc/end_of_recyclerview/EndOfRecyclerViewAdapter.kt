@@ -44,7 +44,7 @@ class EndOfRecyclerViewAdapter : RecyclerView.Adapter<EndOfRecyclerViewAdapter.H
         fun setData(position: Int) {
             binding.user = users.get(position)
 
-            if (position == (users.size-1)) Logger.logd("END OF LIST $position")
+            if (position == (users.size-1)) Logger.debug("END OF LIST $position")
 
         }
 

@@ -57,8 +57,8 @@ public class RetrofitMoshiActivity extends BaseActivity {
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Logger.logd("fail");
-                        Logger.logd(e.getMessage());
+                        Logger.debug("fail");
+                        Logger.debug(e.getMessage());
                     }
                 });
 

@@ -46,7 +46,7 @@ public class MyAccessibilityService extends AccessibilityService {
 
         CharSequence text = node.getText();
         if (text != null && !text.toString().isEmpty()) {
-            Logger.logd(text.toString());
+            Logger.debug(text.toString());
             new Handler(Looper.getMainLooper()).post(() -> floating.updateText(text.toString()));
         }
 

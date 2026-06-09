@@ -38,14 +38,14 @@ public class RetrofitJacksonPresenter implements RetrofitJacksonContract.Present
 
                     @Override
                     public void onSuccess(@NonNull CharacterJacksonWrapper characterJacksonWrapper) {
-                        Logger.logd("success");
+                        Logger.debug("success");
                         view.showItems(characterJacksonWrapper.getResults());
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Logger.logd("fail");
-                        Logger.logd(e.getMessage());
+                        Logger.debug("fail");
+                        Logger.debug(e.getMessage());
                     }
                 });
     }

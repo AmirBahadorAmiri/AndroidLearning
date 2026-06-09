@@ -141,7 +141,7 @@ public class PersianPdfActivity extends BaseActivity {
             printPDF(this);
             Toast.makeText(context, "PDF ساخته شد", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
-            Logger.loge(e.getMessage());
+            Logger.error(e.getMessage());
         }
 
         pdfDocument.close();
@@ -188,7 +188,7 @@ public class PersianPdfActivity extends BaseActivity {
             printPDF(this);
             Toast.makeText(context, "PDF ساخته شد", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
-            Logger.loge(e.getMessage());
+            Logger.error(e.getMessage());
         }
 
         pdfDocument.close();
