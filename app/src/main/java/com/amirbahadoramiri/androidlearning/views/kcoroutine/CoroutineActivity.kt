@@ -1,60 +1,74 @@
 package com.amirbahadoramiri.androidlearning.views.kcoroutine
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
-import com.amirbahadoramiri.androidlearning.R
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.amirbahadoramiri.androidlearning.bases.BaseActivity
+import com.amirbahadoramiri.androidlearning.databinding.ActivityCoroutineBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlin.time.Duration.Companion.seconds
 
 class CoroutineActivity : BaseActivity() {
+
+    lateinit var binding : ActivityCoroutineBinding
+    lateinit var textModel: TextModel
+    lateinit var textViewModel: TextViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         edgeEnabled()
-        setContentView(R.layout.activity_coroutine)
+        binding = ActivityCoroutineBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setViewCompat()
 
-        findViewById<Button>(R.id.button).setOnClickListener {
+        textViewModel = ViewModelProvider(this).get(TextViewModel::class.java)
+        textViewModel.getMutableLiveData()?.observe(this,object : Observer<TextModel> {
+            override fun onChanged(value: TextModel) {
+                binding.data = value
+            }
+        })
+        binding.button.setOnClickListener {
+
+            textModel = CoroutineActivity.TextModel("text 1","text 2","text 3")
+
 //            CoroutineScope(Dispatchers.Default).launch {
-//                setText("Hello World")
+//                setText(textModel)
 //            }
 
 //            GlobalScope.launch {
-//                setText("Hello World")
+//                setText(textModel)
 //            }
-
+//
             CoroutineScope(Dispatchers.IO).launch {
-                setText("Hello World")
+                setText(textModel)
             }
 
         }
 
     }
 
-    suspend fun setText(str: String) {
-        delay(3000)
+    suspend fun setText(textModel: TextModel) {
+        delay(3.seconds)
 //        withContext(Dispatchers.Main){
-//            findViewById<TextView>(R.id.textView3).text = str
+//            binding.textView1.text = str
 //        }
-
+//
 //        MainScope().launch {
-//            findViewById<TextView>(R.id.textView3).text = str
+//            binding.textView2.text = str
 //        }
 
-        lifecycleScope.launch {
-            findViewById<TextView>(R.id.textView3).text = str
-        }
+//        lifecycleScope.launch {
+//            binding.data = textModel
+//        }
+
+        textViewModel.getMutableLiveData()?.value = textModel
 
     }
+
+    data class TextModel(var str1: String,var str2: String,var str3: String)
 
 }

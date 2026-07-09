@@ -1,8 +1,13 @@
 package com.amirbahadoramiri.androidlearning.tools.logger;
 
 import android.util.Log;
-
 import java.util.Objects;
+
+/*
+ *   Created by: @AmirBahadorAmiri
+ *   Created at: 2026-06-12 16:06:52
+ *   Github: https://github.com/AmirBahadorAmiri
+ */
 
 public class Logger {
     private static final String DEBUG = "DEBUG";

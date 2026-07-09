@@ -10,11 +10,12 @@ import androidx.appcompat.widget.SwitchCompat;
 
 import com.amirbahadoramiri.androidlearning.R;
 import com.amirbahadoramiri.androidlearning.bases.BaseActivity;
-import com.amirbahadoramiri.androidlearning.tools.cameraflasher.CameraFlasher;
+import com.amirbahadoramiri.androidlearning.tools.cameraflasher.Flasher;
+import com.amirbahadoramiri.androidlearning.tools.logger.Logger;
 
 public class FlashActivity extends BaseActivity {
 
-    CameraFlasher cameraFlasher = new CameraFlasher();
+    Flasher flasher = new Flasher();
     AppCompatImageView lightImageview;
     SwitchCompat switchButton;
 
@@ -56,23 +57,33 @@ public class FlashActivity extends BaseActivity {
     private void setupViews() {
         fadeOut(0);
         switchButton.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            cameraFlasher.init(FlashActivity.this);
+            flasher.init(FlashActivity.this);
             if (isChecked) {
-                cameraFlasher.turnOnFlash(success2 -> {
-                    fadeIn(1000);
+                flasher.turnOn(new Flasher.CallBack() {
+                    @Override
+                    public void onError(Throwable throwable) {
+                        Logger.debug(throwable);
+                    }
+                    @Override
+                    public void onSuccess() {
+                        fadeIn(1000);
+                        Logger.debug("turnOn");
+                    }
                 });
             } else {
-                cameraFlasher.turnOffFlash(success1 -> {
-                    fadeOut(1000);
+                flasher.turnOff(new Flasher.CallBack() {
+                    @Override
+                    public void onError(Throwable throwable) {
+                        Logger.debug(throwable);
+                    }
+
+                    @Override
+                    public void onSuccess() {
+                        fadeOut(1000);
+                        Logger.debug("turnOff");
+                    }
                 });
             }
         });
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        cameraFlasher.init(this);
-        cameraFlasher.turnOffFlash(success -> {});
     }
 }

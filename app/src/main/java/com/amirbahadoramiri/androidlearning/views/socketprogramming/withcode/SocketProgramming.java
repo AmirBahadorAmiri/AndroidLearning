@@ -2,11 +2,9 @@ package com.amirbahadoramiri.androidlearning.views.socketprogramming.withcode;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -20,7 +18,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Objects;
 
 public class SocketProgramming extends BaseActivity {
@@ -39,7 +36,7 @@ public class SocketProgramming extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         edgeEnabled();
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_web_socket);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_web_socket);
         setViewCompat();
 
         adapter = new ChatAdapter();
@@ -51,7 +48,7 @@ public class SocketProgramming extends BaseActivity {
 
             String text = Objects.requireNonNull(binding.edittext.getText()).toString();
 
-            if ( text.isEmpty() ) {
+            if (text.isEmpty()) {
                 Toast.makeText(this, "ِیه متنی چیزی بنویس", Toast.LENGTH_SHORT).show();
             } else {
                 binding.edittext.setText("");

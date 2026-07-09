@@ -27,7 +27,7 @@
         android:theme="@style/Theme.AndroidLearning">
 
         <activity
-            android:name=".views.volleygoogle.VolleyReqActivity"
+            android:name=".views.circleprogressactivity.CircleProgressActivity"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>

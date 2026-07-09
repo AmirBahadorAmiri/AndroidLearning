@@ -2,8 +2,8 @@ val fileName = "app-name"
 val packageName = "com.amirbahadoramiri.androidlearning"
 
 val MSV = 26 // Minimum SDK Version
-val TSV = 36 // Target SDK Version
-val CSV = 36 // Compile SDK Version
+val TSV = 37 // Target SDK Version
+val CSV = 37 // Compile SDK Version
 val versionMajor = 1
 val versionMinor = 2
 val versionPatch = 3
@@ -24,7 +24,6 @@ private fun generateFileName() : String {
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     id("androidx.room")
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
@@ -32,15 +31,7 @@ plugins {
 
 android {
     namespace = packageName
-    compileSdk(CSV)
-
-    applicationVariants.all {
-        val variant = this
-        variant.outputs.all {
-            val outputFileName = generateFileName()
-            (this as? com.android.build.gradle.internal.api.BaseVariantOutputImpl)?.outputFileName = outputFileName
-        }
-    }
+    compileSdk = CSV
 
     packaging {
         resources {
@@ -56,10 +47,6 @@ android {
         versionName = generateVersionName()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    room {
-        schemaDirectory("$projectDir/schemas")
     }
 
     buildTypes {
@@ -85,8 +72,21 @@ android {
         enable = true
     }
 
-    kotlin {
-        jvmToolchain(21)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+kotlin {
+    jvmToolchain(21)
+}
+
+androidComponents {
+    onVariants { variant ->
+        variant.outputs.forEach { output ->
+            output.outputFileName.set(generateFileName())
+        }
     }
 }
 
@@ -189,5 +189,8 @@ dependencies {
     implementation("io.socket:socket.io-client:2.1.2") {
         exclude(group = "org.json", module = "json")
     }
+
+    implementation(libs.poi)
+    implementation(libs.poi.ooxml)
 
 }

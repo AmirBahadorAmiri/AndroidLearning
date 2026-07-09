@@ -109,9 +109,8 @@ public class WebSourceActivity extends BaseActivity {
                 .subscribe(new SingleObserver<>() {
                     @Override public void onSubscribe(@NonNull Disposable d) {}
                     @Override
-                    public void onSuccess(String s) {
-                        String text = s;
-//                        saveFiles(text,"data.txt")
+                    public void onSuccess(String text) {
+                        //                        saveFiles(text,"data.txt")
 //                                .observeOn(AndroidSchedulers.mainThread())
 //                                .subscribe(new Observer<Boolean>() {
 //                                    @Override public void onSubscribe(@NonNull Disposable d) {}
